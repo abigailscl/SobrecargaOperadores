@@ -1,3 +1,8 @@
+#include "Pareja.h"
+#include <iostream>
+
+using namespace std;
+
 // implementacion de los operadores para la clase Pareja
 //....................................
 Pareja::Pareja(const Pareja& p)
@@ -41,7 +46,13 @@ Pareja& Pareja::operator = (const Pareja& p)
     }
     return *this;
 }
-
+//....................................
+Pareja& Pareja::operator % (const Pareja& p)
+{
+    if (p.a != 0) this->a %= p.a;
+    if (p.a != 0) this->b %= p.b;
+    return *this;
+}
 //....................................
 Pareja& Pareja::operator ++ ()
 {
