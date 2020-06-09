@@ -23,6 +23,7 @@ public:
     Pareja& operator * (const Pareja& p);
     Pareja& operator / (const Pareja& p);
     Pareja& operator = (const Pareja& p);
+    Pareja& operator % (const Pareja& p);
     Pareja& operator ++();
     bool    operator ==(const Pareja& p) const;
 
