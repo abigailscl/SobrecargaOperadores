@@ -60,7 +60,13 @@ Pareja& Pareja::operator ++ ()
     this->b++;
     return *this;
 }
-
+//....................................
+Pareja& Pareja::operator --()
+{
+    this->a--;
+    this->b--;
+    return *this;
+}
 //....................................
 bool Pareja::operator == (const Pareja& p) const
 {
