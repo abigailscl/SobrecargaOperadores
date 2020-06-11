@@ -54,6 +54,13 @@ int main(int argc, char** argv) {
     cout << "B = " << B << endl;
     cout << "(A||B)" << ((A||B) ? "  True \n" : "  False  \n");
     cout << "........................." << endl;
+
+    cout<<"operador ^"<< endl;
+    cout << "C = " << C << endl;
+    cout << "A = " << A << endl;
+    cout << "B = " << B << endl;
+    cout << "(A ^ B)" << ((A^B) ? "  True \n" : "  False  \n");
+    cout << "........................." << endl;
 	return 0;
 }
 
