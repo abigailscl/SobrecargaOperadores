@@ -61,7 +61,7 @@ Pareja& Pareja::operator ++ ()
     return *this;
 }
 //....................................
-Pareja& Pareja::operator --()
+Pareja& Pareja::operator -- ()
 {
     this->a--;
     this->b--;
@@ -87,10 +87,18 @@ istream& operator >> (istream& i, Pareja& p)
     i.ignore();
     return i;
 }
+
+bool Pareja::operator && (const Pareja&)´ {
+    if (this->a == p.a && this->b == p.b)
+        return true;
+    else
+        return false;
+}
+
 bool Pareja::operator || (const Pareja &p)
 {
 
-	if(this->a == p.a || this->b == p.b )
+	if (this->a == p.a || this->b == p.b )
 	{
 		return true;
 		
