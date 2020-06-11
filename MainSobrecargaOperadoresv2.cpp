@@ -19,7 +19,6 @@ int main(int argc, char** argv) {
     cout << "C = " << C << endl;
     cout << "........................." << endl;
  	C = A * B;
-
     cout << "A = " << A << "\n";
     cout << "C = " << C << endl;
     cout << "........................." << endl;   
@@ -52,7 +51,13 @@ int main(int argc, char** argv) {
     cout << "C = " << C << endl;
     cout << "A = " << A << endl;
     cout << "B = " << B << endl;
-    cout << "(A||B)" << ((A||B) ? "  True \n" : "  False  \n");
+    cout << "(A || B)" << ((A||B) ? "  True \n" : "  False  \n");
+    cout << "........................." << endl;
+    cout << "Operador &&" << endl;
+    cout << "C = " << C << endl;
+    cout << "A = " << A << endl;
+    cout << "B = " << B << endl;
+    cout << "(A && B)" << ((A && B) ? "  True \n" : "  False  \n");
     cout << "........................." << endl;
 	return 0;
 }
