@@ -40,7 +40,7 @@ Pareja& Pareja::operator / (const Pareja& p)
 //....................................
 Pareja& Pareja::operator = (const Pareja& p)
 {
-    if (this != &p) { //Comprueba que no se esté intentanod igualar un objeto a sí mismo
+    if (this != &p) { //Comprueba que no se estÃ© intentanod igualar un objeto a sÃ­ mismo
         if (p.a != 0) this->a = p.a;
         if (p.b != 0) this->b = p.b;
     }
@@ -73,7 +73,7 @@ bool Pareja::operator == (const Pareja& p) const
     return this->a == p.a && this->b == p.b;
 }
 
-// implemetaci¢n de operadores no miembros
+// implemetaciÂ¢n de operadores no miembros
 ostream& operator << (ostream& o, const Pareja& p)
 {
     o << "(" << p.a << ", " << p.b << ")";
@@ -86,4 +86,15 @@ istream& operator >> (istream& i, Pareja& p)
     i >> p.a >> p.b;
     i.ignore();
     return i;
+}
+bool Pareja::operator || (const Pareja &p)
+{
+
+	if(this->a == p.a || this->b == p.b )
+	{
+		return true;
+		
+	}else{
+		return false;
+	}
 }
