@@ -1,4 +1,4 @@
-#pragma once
+    #pragma once
 class Pareja {
 
 private:
@@ -27,7 +27,8 @@ public:
     Pareja& operator ++();
     Pareja& operator --();
     bool operator || (const Pareja& p);
-    bool    operator ==(const Pareja& p) const;
+    bool operator && (const Pareja& p):
+    bool operator == (const Pareja& p) const;
 
     // operadores no miembros
     friend ostream& operator << (ostream& o, const Pareja& p);
