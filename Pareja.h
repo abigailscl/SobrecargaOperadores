@@ -28,7 +28,8 @@ public:
     Pareja& operator --();
     bool operator ^ (const Pareja &p);
     bool operator || (const Pareja& p);
-    bool operator && (const Pareja& p):
+    bool operator && (const Pareja& p);
+    bool operator < (const Pareja& p);
     bool operator == (const Pareja& p) const;
 
     // operadores no miembros
