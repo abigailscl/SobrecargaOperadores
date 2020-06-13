@@ -50,7 +50,7 @@ Pareja& Pareja::operator = (const Pareja& p)
 Pareja& Pareja::operator % (const Pareja& p)
 {
     if (p.a != 0) this->a %= p.a;
-    if (p.a != 0) this->b %= p.b;
+    if (p.b != 0) this->b %= p.b;
     return *this;
 }
 //....................................
