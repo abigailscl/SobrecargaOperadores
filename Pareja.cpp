@@ -88,7 +88,8 @@ istream& operator >> (istream& i, Pareja& p)
     return i;
 }
 
-bool Pareja::operator && (const Pareja&)´ {
+bool Pareja::operator && (const Pareja &p)
+{
     if (this->a == p.a && this->b == p.b)
         return true;
     else
@@ -106,14 +107,23 @@ bool Pareja::operator || (const Pareja &p)
 		return false;
 	}
 }
+
 bool Pareja::operator ^ (const Pareja &p)
 {
 
-	if((this->a == p.a) != (this->b == p.b ))
+	if ((this->a == p.a) != (this->b == p.b ))
 	{
 		return true;
 		
 	}else{
 		return false;
 	}
+}
+
+bool Pareja::operator < (const Pareja &p)
+{
+    if ((this->a < p.a) && (this->b < p.b))
+        return true;
+    else
+        return false;
 }
