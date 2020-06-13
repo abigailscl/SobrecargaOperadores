@@ -127,3 +127,11 @@ bool Pareja::operator < (const Pareja &p)
     else
         return false;
 }
+
+bool Pareja::operator > (const Pareja& p)
+{
+    if ((this->a > p.a) && (this->b > p.b))
+        return true;
+    else
+        return false;
+}
