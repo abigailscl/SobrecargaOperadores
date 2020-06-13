@@ -24,6 +24,7 @@ public:
     Pareja& operator / (const Pareja& p);
     Pareja& operator = (const Pareja& p);
     Pareja& operator % (const Pareja& p);
+    Pareja& operator |= (const Pareja &p);
     Pareja& operator ++();
     Pareja& operator --();
     bool operator ^  (const Pareja &p);
