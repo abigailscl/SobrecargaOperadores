@@ -88,7 +88,6 @@ bool Check::floatDouble(string value)
 }
 bool Check::positiveInteger(string cadena)
 {
-
 	try {
 		for (size_t i = 0; i < cadena.length(); i++) {
 			if (isalpha(cadena[i]))

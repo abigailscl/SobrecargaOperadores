@@ -22,30 +22,26 @@ using namespace std;
 class InputData{
 public:
 	InputData();
+    template <typename T> T data();
 	string matrizFloatDouble(int, int);
-	string matrizInteger(int, int);
-	string integer(string);
-	string positiveInteger(string);
-	string floatDouble();
+	string matrizInteger(int, int);	
 	string integerArray(int i);
 	string realArray(int);
 private:
-    Check check;		
+    Check check;
+    string integer(string);
+    string positiveInteger(string);
+    string floatDouble();
 };
-////////////////////////////////////////////////////////////////////////
-// Name:       IngresoDatos::IngresoDatos()
-// Purpose:    Constructor of  class IngresoDatos
-// Parameters: 
-////////////////////////////////////////////////////////////////////////
- InputData::InputData(){}
 
+///Construtor
+InputData::InputData(){}
 ////////////////////////////////////////////////////////////////////////
 // Name:      string IngresoDatos::ingresar(int i)
 // Purpose:    Implementation of  IngresoDatos::ingresar(int i)
 // Parameters: int i
 // Return:     string
 ////////////////////////////////////////////////////////////////////////
-
 string InputData::realArray(int i){	
  	string value;
  	cout << "\nIngrese valor real["  << i <<  "]: ";
@@ -76,7 +72,6 @@ string InputData::floatDouble(){
     }
 	return value;
 }
-
 ////////////////////////////////////////////////////////////////////////
 // Name:      string IngresoDatos::ingresar(int i)
 // Purpose:    Implementation of  IngresoDatos::ingresar()
