@@ -1,0 +1,14 @@
+﻿  Sort.cpp
+C:\Users\Charlie\source\repos\BurbleRecursive\BurbleRecursive\Sort.cpp(9,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Charlie\source\repos\BurbleRecursive\BurbleRecursive\Sort.cpp(4): message : while compiling class template member function 'void Sort<int>::bubbleSort(T *,int)'
+          with
+          [
+              T=int
+          ]
+C:\Users\Charlie\source\repos\BurbleRecursive\BurbleRecursive\Sort.cpp(33): message : see reference to function template instantiation 'void Sort<int>::bubbleSort(T *,int)' being compiled
+          with
+          [
+              T=int
+          ]
+C:\Users\Charlie\source\repos\BurbleRecursive\BurbleRecursive\Sort.cpp(31): message : see reference to class template instantiation 'Sort<int>' being compiled
+  BurbleRecursive.vcxproj -> C:\Users\Charlie\source\repos\BurbleRecursive\Debug\BurbleRecursive.exe
