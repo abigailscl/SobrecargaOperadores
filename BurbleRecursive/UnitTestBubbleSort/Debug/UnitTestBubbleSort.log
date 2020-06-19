@@ -1,0 +1,16 @@
+﻿  pch.cpp
+  UnitTestBubbleSort.cpp
+C:\Users\Charlie\source\repos\EstructuraDeDatos\SobrecargaOperadores\BurbleRecursive\BurbleRecursive\Sort.h(19,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Charlie\source\repos\EstructuraDeDatos\SobrecargaOperadores\BurbleRecursive\BurbleRecursive\Sort.h(14): message : while compiling class template member function 'void Sort<int>::bubbleSort(T *,int)'
+          with
+          [
+              T=int
+          ]
+C:\Users\Charlie\source\repos\EstructuraDeDatos\SobrecargaOperadores\BurbleRecursive\UnitTestBubbleSort\UnitTestBubbleSort.cpp(30): message : see reference to function template instantiation 'void Sort<int>::bubbleSort(T *,int)' being compiled
+          with
+          [
+              T=int
+          ]
+C:\Users\Charlie\source\repos\EstructuraDeDatos\SobrecargaOperadores\BurbleRecursive\UnitTestBubbleSort\UnitTestBubbleSort.cpp(15): message : see reference to class template instantiation 'Sort<int>' being compiled
+     Creating library C:\Users\Charlie\source\repos\EstructuraDeDatos\SobrecargaOperadores\BurbleRecursive\Debug\UnitTestBubbleSort.lib and object C:\Users\Charlie\source\repos\EstructuraDeDatos\SobrecargaOperadores\BurbleRecursive\Debug\UnitTestBubbleSort.exp
+  UnitTestBubbleSort.vcxproj -> C:\Users\Charlie\source\repos\EstructuraDeDatos\SobrecargaOperadores\BurbleRecursive\Debug\UnitTestBubbleSort.dll
