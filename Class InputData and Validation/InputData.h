@@ -34,10 +34,16 @@ public:
     string positiveInteger(string);
     string integerArray(int);    
     string matrizInteger(int, int);
+private:
+    Check check;
+    string value;
 };
 template <>        class InputData<double> {
     InputData();
-    string realArray(int);
+    string realArray(int const);
+private:
+    Check check;
+    string value;
 };
 
 ///Construtor
@@ -52,6 +58,7 @@ template <class T> string InputData<T>::matrizFloatDouble(int i, int j) {
     }
     return value;
 }
+
 template <class T> string InputData<T>::floatDouble(){ 	
  	cout << "\nIngrese valor real:  ";
  	cin  >> value;
@@ -61,7 +68,8 @@ template <class T> string InputData<T>::floatDouble(){
     }
 	return value;
 }
-template <>        string InputData<int>::integer(string message) {
+
+string InputData<int>::integer(string message) {
     cout << message;
     cin >> value;
     while (check.integer(value)) {
@@ -70,7 +78,8 @@ template <>        string InputData<int>::integer(string message) {
     }
     return value;
 }
-template <>        string InputData<int>::positiveInteger(string message){
+
+string InputData<int>::positiveInteger(string message){
  	cout << message;
  	cin  >> value;
  	while (check.positiveInteger(value)) {
@@ -79,7 +88,8 @@ template <>        string InputData<int>::positiveInteger(string message){
 	}
 	return value;
 }
-template <>        string InputData<int>::integerArray(int) {
+
+string InputData<int>::integerArray(int i) {
     cout << "\nIngrese valor[" << i << "]: ";
     cin >> value;
     while (check.integer(value)) {
@@ -88,7 +98,8 @@ template <>        string InputData<int>::integerArray(int) {
     }
     return value;
 }
-template <>        string InputData<int>::matrizInteger(int i, int j){ 	
+
+string InputData<int>::matrizInteger(int const i, int const j) {
  	cout << "\nIngrese valor[" << i << "][" << j << "]: ";
  	cin  >> value;
  	while (check.integer(value)) {
@@ -97,7 +108,8 @@ template <>        string InputData<int>::matrizInteger(int i, int j){
 	}
 	return value;
 }
-template <>        string InputData<double>::realArray(int i) {
+
+string InputData<double>::realArray(int i) {
     cout << "\nIngrese valor real[" << i << "]: ";
     cin >> value;
     while (check.floatDouble(value)) {
