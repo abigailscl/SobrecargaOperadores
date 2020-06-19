@@ -1,4 +1,22 @@
-    #pragma once
+
+/******************************************************************
+*            UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE              *
+* CARRERA: Ingenieria de Software                                 *
+* SEMESTRE: Tercer semestre                                       *
+* MATERIA: Estructura de Datos                                    *
+* NRC: 6396                                                       *
+******************************************************************/
+
+/***********************************************************************
+ * Module:  IngresoDatos.h
+ * Author:  Abigail Cabascango
+ * Modified: domingo, 28 de mayo de 2020 17:51:04
+ * Purpose: Ingresar datos por consola
+ **********************************************************************/
+ #if !defined(__Operators_h)
+#define __Operators_h
+ #include <iostream>
+using namespace std;
 class Pareja {
 
 private:
@@ -18,22 +36,38 @@ public:
     Pareja(const Pareja&);
 
     // operadores miembros
-    Pareja& operator + (const Pareja& p);
-    Pareja& operator - (const Pareja& p);
-    Pareja& operator * (const Pareja& p);
-    Pareja& operator / (const Pareja& p);
-    Pareja& operator = (const Pareja& p);
-    Pareja& operator % (const Pareja& p);
-    Pareja& operator |= (const Pareja &p);
-    Pareja& operator ++();
-    Pareja& operator --();
-    bool operator ^  (const Pareja &p);
-    bool operator || (const Pareja& p);
-    bool operator && (const Pareja& p);
-    bool operator <  (const Pareja& p);
-    bool operator >  (const Pareja& p);
-    bool operator == (const Pareja& p) const;
-    bool operator != (const Pareja& p);
+     template<class T>
+    Pareja& operator + (T p);
+     template<class T>
+    Pareja& operator - (T p);
+     template<class T>
+    Pareja& operator * (T p);
+     template<class T>
+    Pareja& operator / (T p);
+     template<class T>
+    Pareja& operator = (T p);
+     template<class T>
+    Pareja& operator % (T p);
+    template<class T>
+    Pareja& operator |= (T p);
+    template<class T>
+    Pareja& operator ++(T p);
+     template<class T>
+    Pareja& operator --(T p);
+     template<class T>
+    bool operator ^  (T p);
+     template<class T>
+    bool operator || (T p);
+     template<class T>
+    bool operator && (T p);
+     template<class T>
+    bool operator <  (T p);
+     template<class T>
+    bool operator > (T p);
+     template<class T>
+    bool operator == (T p);
+     template<class T>
+    bool operator != (T p);
     // operadores no miembros
     friend ostream& operator << (ostream& o, const Pareja& p);
     friend istream& operator >> (istream& o, Pareja& p);
