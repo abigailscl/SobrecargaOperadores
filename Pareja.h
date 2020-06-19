@@ -9,7 +9,7 @@
 
 /***********************************************************************
  * Module:  IngresoDatos.h
- * Author:  Abigail Cabascango
+ * Author:  Carlos Romero, Abigail Cabascango
  * Modified: domingo, 28 de mayo de 2020 17:51:04
  * Purpose: Ingresar datos por consola
  **********************************************************************/
