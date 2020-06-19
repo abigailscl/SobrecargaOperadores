@@ -3,42 +3,47 @@
 
 using namespace std;
 
-// implementacion de los operadores para la clase Pareja
+
 //....................................
 Pareja::Pareja(const Pareja& p)
 {
     *this = p;
 }
 //....................................
-Pareja& Pareja::operator + (const Pareja& p)
+template<class T>
+Pareja& Pareja::operator + (T p)
 {
     this->a += p.a;
     this->b += p.b;
     return *this;
 }
 //....................................
-Pareja& Pareja::operator - (const Pareja& p)
+template<class T>
+Pareja& Pareja::operator - (T p)
 {
     this->a -= p.a;
     this->b -= p.b;
     return *this;
 }
 //....................................
-Pareja& Pareja::operator * (const Pareja& p)
+template<class T>
+Pareja& Pareja::operator * (T p)
 {
     this->a *= p.a;
     this->b *= p.b;
     return *this;
 }
 //....................................
-Pareja& Pareja::operator / (const Pareja& p)
+template<class T>
+Pareja& Pareja::operator / (T p)
 {
     if (p.a != 0) this->a /= p.a;
     if (p.b != 0) this->b /= p.b;
     return *this;
 }
 //....................................
-Pareja& Pareja::operator = (const Pareja& p)
+template<class T>
+Pareja& Pareja::operator = (T p)
 {
     if (this != &p) { //Comprueba que no se esté intentanod igualar un objeto a sí mismo
         if (p.a != 0) this->a = p.a;
@@ -47,28 +52,32 @@ Pareja& Pareja::operator = (const Pareja& p)
     return *this;
 }
 //....................................
-Pareja& Pareja::operator % (const Pareja& p)
+template<class T>
+Pareja& Pareja::operator % (T p)
 {
     if (p.a != 0) this->a %= p.a;
     if (p.b != 0) this->b %= p.b;
     return *this;
 }
 //....................................
-Pareja& Pareja::operator ++ ()
+template<class T>
+Pareja& Pareja::operator ++ (T p)
 {
     this->a++;
     this->b++;
     return *this;
 }
 //....................................
-Pareja& Pareja::operator -- ()
+template<class T>
+Pareja& Pareja::operator -- (T p)
 {
     this->a--;
     this->b--;
     return *this;
 }
 //....................................
-bool Pareja::operator == (const Pareja& p) const
+template<class T>
+bool Pareja::operator == (T p) 
 {
     return this->a == p.a && this->b == p.b;
 }
@@ -87,16 +96,16 @@ istream& operator >> (istream& i, Pareja& p)
     i.ignore();
     return i;
 }
-
-bool Pareja::operator && (const Pareja &p)
+template<class T>
+bool Pareja::operator && (T p)
 {
     if (this->a == p.a && this->b == p.b)
         return true;
     else
         return false;
 }
-
-bool Pareja::operator || (const Pareja &p)
+template<class T>
+bool Pareja::operator || (T p)
 {
 
 	if (this->a == p.a || this->b == p.b )
@@ -107,8 +116,8 @@ bool Pareja::operator || (const Pareja &p)
 		return false;
 	}
 }
-
-bool Pareja::operator ^ (const Pareja &p)
+template<class T>
+bool Pareja::operator ^ (T p)
 {
 
 	if ((this->a == p.a) != (this->b == p.b ))
@@ -119,23 +128,24 @@ bool Pareja::operator ^ (const Pareja &p)
 		return false;
 	}
 }
-
-bool Pareja::operator < (const Pareja &p)
+template<class T>
+bool Pareja::operator < (T p)
 {
     if ((this->a < p.a) && (this->b < p.b))
         return true;
     else
         return false;
 }
-
-bool Pareja::operator > (const Pareja& p)
+template<class T>
+bool Pareja::operator > (T p)
 {
     if ((this->a > p.a) && (this->b > p.b))
         return true;
     else
         return false;
 }
- bool Pareja:: operator !=(const Pareja& p)
+template<class T>
+ bool Pareja:: operator !=(T p)
  {
 	if((this->a != p.a) && (this->b != p.b ))
 	{
@@ -144,10 +154,11 @@ bool Pareja::operator > (const Pareja& p)
 	}else{
 		return false;
   }
-Pareja& Pareja::operator |= (const Pareja &p)
+}
+template<class T>
+Pareja& Pareja::operator |= (T p)
 {
     this->a |= p.a;
     this->b |= p.b;
     return *this;
-}
 }
