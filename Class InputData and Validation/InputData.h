@@ -19,51 +19,40 @@
 
 using namespace std;
 
-class InputData{
+template <class T> class InputData{
 public:
-	InputData();
-    template <typename T> T data();
-	string matrizFloatDouble(int, int);
-	string matrizInteger(int, int);	
-	string integerArray(int i);
-	string realArray(int);
+	InputData();    
+	string matrizFloatDouble(int, int);		
+    string floatDouble();
 private:
-    Check check;
+    Check check;   
+    string value;
+};
+template <>        class InputData<int> {
+public:
     string integer(string);
     string positiveInteger(string);
-    string floatDouble();
+    string integerArray(int);    
+    string matrizInteger(int, int);
+};
+template <>        class InputData<double> {
+    InputData();
+    string realArray(int);
 };
 
 ///Construtor
-InputData::InputData(){}
-////////////////////////////////////////////////////////////////////////
-// Name:      string IngresoDatos::ingresar(int i)
-// Purpose:    Implementation of  IngresoDatos::ingresar(int i)
-// Parameters: int i
-// Return:     string
-////////////////////////////////////////////////////////////////////////
-string InputData::realArray(int i){	
- 	string value;
- 	cout << "\nIngrese valor real["  << i <<  "]: ";
- 	cin  >> value;
- 	while (check.floatDouble(value)) {
- 		cout << "\nIngreso erroneo, vuelva a ingresar: ";
- 		cin  >> value;
-	}
-	return value;
+template <class T> InputData<T>::InputData(){}
+
+template <class T> string InputData<T>::matrizFloatDouble(int i, int j) {
+    cout << "\nIngrese valor[" << i << "][" << j << "]: ";
+    cin >> value;
+    while (check.floatDouble(value)) {
+        cout << "\nIngreso erroneo, vuelva a ingresar: ";
+        cin >> value;
+    }
+    return value;
 }
-string InputData::integerArray(int i){
- 	string value;
- 	cout << "\nIngrese valor entero["   << i << "]: ";
- 	cin  >> value;
- 	while (check.integer(value)) {
- 		cout << "\nIngreso erroneo, vuelva a ingresar: ";
- 		cin  >> value;
-	}
-	return value;
-}
-string InputData::floatDouble(){
- 	string value;
+template <class T> string InputData<T>::floatDouble(){ 	
  	cout << "\nIngrese valor real:  ";
  	cin  >> value;
  	while (check.floatDouble(value)) {
@@ -72,14 +61,16 @@ string InputData::floatDouble(){
     }
 	return value;
 }
-////////////////////////////////////////////////////////////////////////
-// Name:      string IngresoDatos::ingresar(int i)
-// Purpose:    Implementation of  IngresoDatos::ingresar()
-// Parameters: 
-// Return:     string
-////////////////////////////////////////////////////////////////////////
-string InputData::positiveInteger(string message){
- 	string value;
+template <>        string InputData<int>::integer(string message) {
+    cout << message;
+    cin >> value;
+    while (check.integer(value)) {
+        cout << "\nIngreso erroneo, vuelva a ingresar: ";
+        cin >> value;
+    }
+    return value;
+}
+template <>        string InputData<int>::positiveInteger(string message){
  	cout << message;
  	cin  >> value;
  	while (check.positiveInteger(value)) {
@@ -88,30 +79,16 @@ string InputData::positiveInteger(string message){
 	}
 	return value;
 }
-////////////////////////////////////////////////////////////////////////
-// Name:      string IngresoDatos::ingresar(int i)
-// Purpose:    Implementation of  IngresoDatos::ingresar(string mensage)
-// Parameters: string mensage
-// Return:     string
-////////////////////////////////////////////////////////////////////////
-string InputData::integer(string message){
- 	string value;
- 	cout << message;
- 	cin  >> value;
- 	while (check.integer(value)) {
- 		cout << "\nIngreso erroneo, vuelva a ingresar: ";
- 		cin  >> value;
-	}
-	return value;
+template <>        string InputData<int>::integerArray(int) {
+    cout << "\nIngrese valor[" << i << "]: ";
+    cin >> value;
+    while (check.integer(value)) {
+        cout << "\nIngreso erroneo, vuelva a ingresar: ";
+        cin >> value;
+    }
+    return value;
 }
-////////////////////////////////////////////////////////////////////////
-// Name:      IngresoDatos::ingresar(int i, int j)
-// Purpose:    Implementation of  IngresoDatos::ingresar(int i, int j)
-// Parameters: int i, int j
-// Return:     string
-////////////////////////////////////////////////////////////////////////
-string InputData::matrizInteger(int i, int j){	
- 	string value;
+template <>        string InputData<int>::matrizInteger(int i, int j){ 	
  	cout << "\nIngrese valor[" << i << "][" << j << "]: ";
  	cin  >> value;
  	while (check.integer(value)) {
@@ -120,14 +97,13 @@ string InputData::matrizInteger(int i, int j){
 	}
 	return value;
 }
-string InputData::matrizFloatDouble(int i, int j){
- 	string value;
- 	cout << "\nIngrese valor[" << i << "][" << j <<  "]: ";
- 	cin  >> value;
- 	while (check.floatDouble(value)) {
- 		cout << "\nIngreso erroneo, vuelva a ingresar: ";
- 		cin  >> value;
-	}
-	return value;
+template <>        string InputData<double>::realArray(int i) {
+    cout << "\nIngrese valor real[" << i << "]: ";
+    cin >> value;
+    while (check.floatDouble(value)) {
+        cout << "\nIngreso erroneo, vuelva a ingresar: ";
+        cin >> value;
+    }
+    return value;
 }
 #endif
