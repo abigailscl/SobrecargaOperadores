@@ -10,7 +10,7 @@
 /***********************************************************************
  * Module:  IngresoDatos.h
  * Author:  Carlos Romero, Abigail Cabascango
- * Modified: domingo, 28 de mayo de 2020 17:51:04
+ * Modified: viernes, 12 de junio de 2020 17:51:04
  * Purpose: Ingresar datos por consola
  **********************************************************************/
  #if !defined(__Operators_h)
